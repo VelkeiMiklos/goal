@@ -16,6 +16,10 @@
 		F5D396281FAF4501006B99D4 /* CreateGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D396271FAF4501006B99D4 /* CreateGoalVC.swift */; };
 		F5D3962A1FAF4529006B99D4 /* FinishGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D396291FAF4529006B99D4 /* FinishGoalVC.swift */; };
 		F5D3962C1FAF46BA006B99D4 /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D3962B1FAF46BA006B99D4 /* GoalCell.swift */; };
+		F5D3962F1FAF5397006B99D4 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D3962E1FAF5397006B99D4 /* UIViewControllerExt.swift */; };
+		F5D396321FAF53E1006B99D4 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D396311FAF53E1006B99D4 /* UIViewExt.swift */; };
+		F5D396351FAF54FD006B99D4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D396341FAF54FD006B99D4 /* Constants.swift */; };
+		F5D396371FAF5D0F006B99D4 /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D396361FAF5D0F006B99D4 /* UIButtonExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		F5D396271FAF4501006B99D4 /* CreateGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalVC.swift; sourceTree = "<group>"; };
 		F5D396291FAF4529006B99D4 /* FinishGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGoalVC.swift; sourceTree = "<group>"; };
 		F5D3962B1FAF46BA006B99D4 /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
+		F5D3962E1FAF5397006B99D4 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		F5D396311FAF53E1006B99D4 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		F5D396341FAF54FD006B99D4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F5D396361FAF5D0F006B99D4 /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,8 @@
 		F5D396101FAF402E006B99D4 /* GoalApp */ = {
 			isa = PBXGroup;
 			children = (
+				F5D396331FAF54EC006B99D4 /* Util */,
+				F5D396301FAF539C006B99D4 /* Extension */,
 				F5D3962D1FAF46DE006B99D4 /* View */,
 				F5D396261FAF44E8006B99D4 /* Controller */,
 				F5D396111FAF402E006B99D4 /* AppDelegate.swift */,
@@ -90,6 +100,24 @@
 				F5D3962B1FAF46BA006B99D4 /* GoalCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F5D396301FAF539C006B99D4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F5D3962E1FAF5397006B99D4 /* UIViewControllerExt.swift */,
+				F5D396311FAF53E1006B99D4 /* UIViewExt.swift */,
+				F5D396361FAF5D0F006B99D4 /* UIButtonExt.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F5D396331FAF54EC006B99D4 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				F5D396341FAF54FD006B99D4 /* Constants.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,11 +193,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5D3961A1FAF402E006B99D4 /* GoalApp.xcdatamodeld in Sources */,
+				F5D396371FAF5D0F006B99D4 /* UIButtonExt.swift in Sources */,
 				F5D396281FAF4501006B99D4 /* CreateGoalVC.swift in Sources */,
 				F5D3962C1FAF46BA006B99D4 /* GoalCell.swift in Sources */,
 				F5D396141FAF402E006B99D4 /* Goals.swift in Sources */,
+				F5D396321FAF53E1006B99D4 /* UIViewExt.swift in Sources */,
 				F5D3962A1FAF4529006B99D4 /* FinishGoalVC.swift in Sources */,
+				F5D3962F1FAF5397006B99D4 /* UIViewControllerExt.swift in Sources */,
 				F5D396121FAF402E006B99D4 /* AppDelegate.swift in Sources */,
+				F5D396351FAF54FD006B99D4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

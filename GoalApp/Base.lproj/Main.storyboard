@@ -71,7 +71,7 @@
                                 <rect key="frame" x="0.0" y="90" width="375" height="577"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="t7e-rP-IBa" customClass="GoalCell" customModule="GoalApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalCell" rowHeight="80" id="t7e-rP-IBa" customClass="GoalCell" customModule="GoalApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t7e-rP-IBa" id="8yF-05-jyy">
@@ -176,7 +176,7 @@
         <!--Create GoalVC-->
         <scene sceneID="2d2-WX-sCS">
             <objects>
-                <viewController id="04P-w5-sm2" customClass="CreateGoalVC" customModule="GoalApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createGoalSB" id="04P-w5-sm2" customClass="CreateGoalVC" customModule="GoalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jqJ-xk-pKG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -231,11 +231,11 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="asH-NJ-36q">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="asH-NJ-36q">
                                 <rect key="frame" x="10" y="315" width="355" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5r-8G-H36">
-                                        <rect key="frame" x="0.0" y="0.0" width="177.5" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="172.5" height="50"/>
                                         <color key="backgroundColor" red="0.4103884995" green="0.80803042650000001" blue="0.3577955961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="SHORT TREM">
@@ -246,7 +246,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYv-2p-b2v">
-                                        <rect key="frame" x="177.5" y="0.0" width="177.5" height="50"/>
+                                        <rect key="frame" x="182.5" y="0.0" width="172.5" height="50"/>
                                         <color key="backgroundColor" red="0.68409270050000004" green="0.90346515179999998" blue="0.67155879740000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="LONG TERM">
@@ -296,6 +296,7 @@
                     <connections>
                         <outlet property="goalTextView" destination="B4u-n9-5qL" id="fp5-OK-DKb"/>
                         <outlet property="longTermBtn" destination="MYv-2p-b2v" id="Gev-xu-xpT"/>
+                        <outlet property="nextBtn" destination="Dtj-fI-0RV" id="9BH-fg-6IH"/>
                         <outlet property="shortTermBtn" destination="B5r-8G-H36" id="vD5-05-G5Z"/>
                     </connections>
                 </viewController>
@@ -306,7 +307,7 @@
         <!--Finish GoalVC-->
         <scene sceneID="eeq-Xl-3ob">
             <objects>
-                <viewController id="QQ6-Op-Pmc" customClass="FinishGoalVC" customModule="GoalApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="finishGoalSB" id="QQ6-Op-Pmc" customClass="FinishGoalVC" customModule="GoalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m3N-Lu-015">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -383,7 +384,7 @@
                                     <constraint firstAttribute="bottom" secondItem="E6X-L1-aSo" secondAttribute="bottom" id="q9e-bd-B3C"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lwe-Qz-w9Z">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lwe-Qz-w9Z">
                                 <rect key="frame" x="157" y="145" width="60" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="K0g-Yn-jCw"/>
@@ -391,7 +392,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.3015393019" green="0.74941009280000004" blue="0.33389669659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -411,12 +412,13 @@
                         <viewLayoutGuide key="safeArea" id="ztd-za-zkK"/>
                     </view>
                     <connections>
+                        <outlet property="createGoalBtn" destination="E6X-L1-aSo" id="q4G-5O-O6r"/>
                         <outlet property="pointsTxt" destination="lwe-Qz-w9Z" id="uVV-5e-8w5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4EE-LE-18s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1497" y="35"/>
+            <point key="canvasLocation" x="1497" y="26"/>
         </scene>
     </scenes>
     <resources>
