@@ -39,7 +39,8 @@ class FinishGoalVC: UIViewController {
         if pointsTxt.text != "" &&  pointsTxt.text != "0"{
             self.saveGoal(completion: { (success) in
                 if success{
-                    self.dismiss(animated: true, completion: nil)
+                    //self.dismiss(animated: true, completion: nil)
+                    self.performSegue(withIdentifier: "unwindToGoals", sender: nil)
                 }else{
                     let alertController = UIAlertController(title: "Error", message: "Goal was not save", preferredStyle: .alert)
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -55,8 +56,6 @@ class FinishGoalVC: UIViewController {
             present(alertController, animated: true, completion: nil)
             return
         }
-        
-        
     }
     
 }
@@ -75,7 +74,7 @@ extension FinishGoalVC{
         
         let goal = Goal(context: managedContext)
         goal.goalDescription = goalDescription
-        goal.goalType = "\(goalType)"
+        goal.goalType = "\(goalType.rawValue)"
         goal.goalProgress = Int32(pointsTxt.text!)!
         goal.goalCompletionValue = 0
         
@@ -85,11 +84,12 @@ extension FinishGoalVC{
             completion(true)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.localizedDescription)")
-            completion(false)
+
             let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
+            completion(false)
         }
         
     }

@@ -10,6 +10,7 @@ import UIKit
 
 class GoalCell: UITableViewCell {
 
+    @IBOutlet weak var completeView: UIView!
     @IBOutlet weak var goalDescriptionLbl: UILabel!
     @IBOutlet weak var typeLbl: UILabel!
     @IBOutlet weak var goalProgressLbl: UILabel!
@@ -18,10 +19,18 @@ class GoalCell: UITableViewCell {
         // Initialization code
     }
 
-    func configureCell(description: String, type: GoalType, goalProgress: Int){
-        self.goalDescriptionLbl.text = description
-        self.typeLbl.text = type.rawValue
-        self.goalProgressLbl.text = "\(goalProgress)"
+    func configureCell(goal: Goal){
+        self.goalDescriptionLbl.text = goal.goalDescription
+        self.typeLbl.text = goal.goalType
+        self.goalProgressLbl.text = "\(goal.goalCompletionValue)"
+        
+        //Ha a kitűzött goal pontot eléri akkor megjelenik a képernyőn
+        if goal.goalCompletionValue == goal.goalProgress{
+           completeView.isHidden = false
+        }else{
+            completeView.isHidden = true
+        }
+        
     }
 
 }
