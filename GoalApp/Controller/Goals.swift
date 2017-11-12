@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 class Goals: UIViewController {
 
     //Outlets
@@ -17,6 +18,7 @@ class Goals: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isHidden = false
+        callDateNotification()
     }
     
     //Variables
@@ -45,6 +47,16 @@ class Goals: UIViewController {
                 }
             }
         }
+    }
+    
+    func callDateNotification(){
+        var components = DateComponents()
+        //Tesztelés szempontjábol percenként küldi
+        //components.second = 0
+        components.hour = 13
+        components.minute = 30
+        components.weekday = 1
+        UNService.instance.scheduledNotification(date: components)
     }
     
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F54574841FB5999700EC881E /* UNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54574831FB5999700EC881E /* UNService.swift */; };
+		F54574861FB5A8FB00EC881E /* goal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F54574851FB5A8FA00EC881E /* goal.jpg */; };
 		F5D396121FAF402E006B99D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D396111FAF402E006B99D4 /* AppDelegate.swift */; };
 		F5D396141FAF402E006B99D4 /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D396131FAF402E006B99D4 /* Goals.swift */; };
 		F5D396171FAF402E006B99D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D396151FAF402E006B99D4 /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F54574831FB5999700EC881E /* UNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNService.swift; sourceTree = "<group>"; };
+		F54574851FB5A8FA00EC881E /* goal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = goal.jpg; sourceTree = "<group>"; };
 		F5D3960E1FAF402E006B99D4 /* GoalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D396111FAF402E006B99D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5D396131FAF402E006B99D4 /* Goals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
@@ -51,6 +55,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F54574821FB598DA00EC881E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F54574831FB5999700EC881E /* UNService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F54574871FB5A90100EC881E /* GoalNotificationImage */ = {
+			isa = PBXGroup;
+			children = (
+				F54574851FB5A8FA00EC881E /* goal.jpg */,
+			);
+			path = GoalNotificationImage;
+			sourceTree = "<group>";
+		};
 		F5D396051FAF402D006B99D4 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +90,7 @@
 		F5D396101FAF402E006B99D4 /* GoalApp */ = {
 			isa = PBXGroup;
 			children = (
+				F54574821FB598DA00EC881E /* Services */,
 				F5D396331FAF54EC006B99D4 /* Util */,
 				F5D396301FAF539C006B99D4 /* Extension */,
 				F5D3962D1FAF46DE006B99D4 /* View */,
@@ -97,6 +118,7 @@
 		F5D3962D1FAF46DE006B99D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F54574871FB5A90100EC881E /* GoalNotificationImage */,
 				F5D3962B1FAF46BA006B99D4 /* GoalCell.swift */,
 			);
 			path = View;
@@ -181,6 +203,7 @@
 			files = (
 				F5D3961F1FAF402E006B99D4 /* LaunchScreen.storyboard in Resources */,
 				F5D3961C1FAF402E006B99D4 /* Assets.xcassets in Resources */,
+				F54574861FB5A8FB00EC881E /* goal.jpg in Resources */,
 				F5D396171FAF402E006B99D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +217,7 @@
 			files = (
 				F5D3961A1FAF402E006B99D4 /* GoalApp.xcdatamodeld in Sources */,
 				F5D396371FAF5D0F006B99D4 /* UIButtonExt.swift in Sources */,
+				F54574841FB5999700EC881E /* UNService.swift in Sources */,
 				F5D396281FAF4501006B99D4 /* CreateGoalVC.swift in Sources */,
 				F5D3962C1FAF46BA006B99D4 /* GoalCell.swift in Sources */,
 				F5D396141FAF402E006B99D4 /* Goals.swift in Sources */,
