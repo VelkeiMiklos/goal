@@ -49,6 +49,15 @@ class Goals: UIViewController {
         }
     }
     
+    @IBAction func restoreBtnWasPressed(_ sender: Any) {
+        PurchaseService.instance.restorePurchase { (success) in
+            let alertController = UIAlertController(title: "Success", message: "Restore process was success", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
     func callDateNotification(){
         var components = DateComponents()
         //Tesztelés szempontjábol percenként küldi

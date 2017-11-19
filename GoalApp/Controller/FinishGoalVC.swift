@@ -8,11 +8,13 @@
 
 import UIKit
 import CoreData
+import GoogleMobileAds
 class FinishGoalVC: UIViewController {
     
     //Outlets
     @IBOutlet weak var pointsTxt: UITextField!
     
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var createGoalBtn: UIButton!
     //Variable
     var goalDescription: String!
@@ -21,8 +23,18 @@ class FinishGoalVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createGoalBtn.bindToKeyboard()
-        pointsTxt.delegate = self
-        // Do any additional setup after loading the view.
+                pointsTxt.delegate = self
+        if UserDefaults.standard.bool(forKey: PurchaseService.instance.IAP_REMOVE_ADS){
+            bannerView.removeFromSuperview()
+        }else{
+            bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+            bannerView.rootViewController = self
+            bannerView.load(GADRequest())
+            bannerView.bindToKeyboard()
+        }
+        
+
+
     }
     
     func initData(goalDescription: String, goalType: GoalType){
@@ -34,6 +46,18 @@ class FinishGoalVC: UIViewController {
         dismissDetail()
     }
     
+    @IBAction func removeAdsBtnsWasPressed(_ sender: Any) {
+        PurchaseService.instance.purchaseRemoveAds { (success) in
+            if success{
+                self.bannerView.removeFromSuperview()
+            }else{
+                let alertController = UIAlertController(title: "Error", message: "Purchasin process was not success", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
+    }
     @IBAction func createGoalWasPressed(_ sender: Any) {
         
         if pointsTxt.text != "" &&  pointsTxt.text != "0"{

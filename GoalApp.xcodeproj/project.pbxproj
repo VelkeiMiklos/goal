@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		F54574841FB5999700EC881E /* UNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54574831FB5999700EC881E /* UNService.swift */; };
 		F54574861FB5A8FB00EC881E /* goal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F54574851FB5A8FA00EC881E /* goal.jpg */; };
+		F56C99A41FC075D800ABAD0C /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F56C99A31FC075D700ABAD0C /* GoogleMobileAds.framework */; };
+		F56C99A71FC0769400ABAD0C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F56C99A61FC0769400ABAD0C /* StoreKit.framework */; };
+		F56C99A91FC07C7300ABAD0C /* PurchaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56C99A81FC07C7300ABAD0C /* PurchaseService.swift */; };
 		F5D396121FAF402E006B99D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D396111FAF402E006B99D4 /* AppDelegate.swift */; };
 		F5D396141FAF402E006B99D4 /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D396131FAF402E006B99D4 /* Goals.swift */; };
 		F5D396171FAF402E006B99D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D396151FAF402E006B99D4 /* Main.storyboard */; };
@@ -27,6 +30,9 @@
 /* Begin PBXFileReference section */
 		F54574831FB5999700EC881E /* UNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNService.swift; sourceTree = "<group>"; };
 		F54574851FB5A8FA00EC881E /* goal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = goal.jpg; sourceTree = "<group>"; };
+		F56C99A31FC075D700ABAD0C /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		F56C99A61FC0769400ABAD0C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		F56C99A81FC07C7300ABAD0C /* PurchaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseService.swift; sourceTree = "<group>"; };
 		F5D3960E1FAF402E006B99D4 /* GoalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D396111FAF402E006B99D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5D396131FAF402E006B99D4 /* Goals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
@@ -49,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F56C99A41FC075D800ABAD0C /* GoogleMobileAds.framework in Frameworks */,
+				F56C99A71FC0769400ABAD0C /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				F54574831FB5999700EC881E /* UNService.swift */,
+				F56C99A81FC07C7300ABAD0C /* PurchaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -71,11 +80,20 @@
 			path = GoalNotificationImage;
 			sourceTree = "<group>";
 		};
+		F56C99A51FC0769400ABAD0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F56C99A61FC0769400ABAD0C /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F5D396051FAF402D006B99D4 = {
 			isa = PBXGroup;
 			children = (
 				F5D396101FAF402E006B99D4 /* GoalApp */,
 				F5D3960F1FAF402E006B99D4 /* Products */,
+				F56C99A51FC0769400ABAD0C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +119,7 @@
 				F5D3961D1FAF402E006B99D4 /* LaunchScreen.storyboard */,
 				F5D396201FAF402E006B99D4 /* Info.plist */,
 				F5D396181FAF402E006B99D4 /* GoalApp.xcdatamodeld */,
+				F56C99A31FC075D700ABAD0C /* GoogleMobileAds.framework */,
 			);
 			path = GoalApp;
 			sourceTree = "<group>";
@@ -175,6 +194,11 @@
 					F5D3960D1FAF402E006B99D4 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -223,6 +247,7 @@
 				F5D396141FAF402E006B99D4 /* Goals.swift in Sources */,
 				F5D396321FAF53E1006B99D4 /* UIViewExt.swift in Sources */,
 				F5D3962A1FAF4529006B99D4 /* FinishGoalVC.swift in Sources */,
+				F56C99A91FC07C7300ABAD0C /* PurchaseService.swift in Sources */,
 				F5D3962F1FAF5397006B99D4 /* UIViewControllerExt.swift in Sources */,
 				F5D396121FAF402E006B99D4 /* AppDelegate.swift in Sources */,
 				F5D396351FAF54FD006B99D4 /* Constants.swift in Sources */,
@@ -364,9 +389,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2M3TGJYMN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GoalApp",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = GoalApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.neonatcore.GoalApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.neonatcore.daily-dose";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -379,9 +409,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2M3TGJYMN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GoalApp",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = GoalApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.neonatcore.GoalApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.neonatcore.daily-dose";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
