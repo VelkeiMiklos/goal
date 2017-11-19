@@ -2,3 +2,6 @@
 CoreData
 LocalNotifications
 AutoLayout
+Admob
+In-App purchase
+Restore purchase
