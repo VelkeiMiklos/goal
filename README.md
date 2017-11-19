@@ -1,4 +1,4 @@
-# Adatok mentése CoreData segítségével. Minden héten egy LocalNotification küldése. In-App purchase amivel el lehet távolítani az Admob bannert.
+# Adatok mentése CoreData segítségével. Minden héten egy LocalNotification küldése. In-App purchase, amivel el lehet távolítani az Admob bannert.
 CoreData
 LocalNotifications
 AutoLayout
